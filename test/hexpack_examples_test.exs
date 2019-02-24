@@ -4,7 +4,9 @@ defmodule HexpackExamplesTest do
 
   #
   # Read this tests as an example-usage of my hex-packages
-  # timewrap, bucketier, and data_source
+  # - [timewrap](https://hexdocs.pm/timewrap), 
+  # - [bucketier](https://hexdocs.pm/bucketier), 
+  # - and [data_source](https://hexdocs.pm/data_source)
   #
   
   describe "TIMEWRAP:" do
