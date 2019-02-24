@@ -2,20 +2,34 @@ defmodule HexpackExamplesTest do
   use ExUnit.Case
   doctest HexpackExamples
 
+  #
+  # Read this tests as an example-usage of my hex-packages
+  # timewrap, bucketier, and data_source
+  #
+  
   describe "TIMEWRAP:" do
     use Timewrap
 
     test "use a new :test_timer" do
+    
+      # You don't need to use `new_timer(:default_timer)`, this is started with the app
+      # For other timer instances you can use `new_timer(:atom)` as here
+      
       {:ok, t} = new_timer(:test_timer)
       freeze_time(:test_timer, ~N[1964-08-31 06:00:00])
+      
+      :timer.sleep(1_010)
 
       assert current_time(:test_timer) == ~N[1964-08-31 06:00:00]
 
       unfreeze_time(:test_timer)
+      
+      # Don't forget to release a timer started with `new_timer` before.
       release_timer(t)
     end
 
     test "use `with_frozen_time`" do
+      # At the moment `with_frozen_times` works with the `:default_timer` only.
       subject = with_frozen_time(~N[1964-08-31 06:00:00], fn -> current_time() end)
       assert -168_372_000 == subject
     end
