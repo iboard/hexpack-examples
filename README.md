@@ -26,9 +26,9 @@ When using `Timewrap`, don't forget to add it as an `extra_application`.
         # Run "mix help deps" to learn about dependencies.
         defp deps do
           [
-            {:data_source, path: "../data_source" },
-            {:bucketier, path: "../bucketier" },
-            {:timewrap, path: "../timewrap" }
+            {:data_source, "~> 0.1" },
+            {:bucketier, "~> 0.1" },
+            {:timewrap, "~> 0.1" }
           ]
         end
 
