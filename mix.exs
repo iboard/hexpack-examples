@@ -22,9 +22,9 @@ defmodule HexpackExamples.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:data_source, path: "~> 1.0" },
-      {:bucketier, path: "~> 1.0" },
-      {:timewrap, path: "~> 1.0" }
+      {:data_source, "~> 0.1" },
+      {:bucketier, "~> 0.1" },
+      {:timewrap, "~> 0.1" }
     ]
   end
 end
