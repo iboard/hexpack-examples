@@ -5,6 +5,14 @@ defmodule HexpackExamplesTest do
   describe "TIMEWRAP:" do
     use Timewrap
 
+    test "use the default timer" do
+      freeze_time(:default_timer, ~N[1964-08-31 06:00:00])
+      :timer.sleep(1010)
+      assert ~N[1964-08-31 06:00:00] == current_time() 
+      unfreeze_time()
+      assert current_time() > 1_000_000_000
+    end
+
     test "use a new :test_timer" do
       {:ok, t} = new_timer(:test_timer)
       freeze_time(:test_timer, ~N[1964-08-31 06:00:00])
@@ -16,8 +24,9 @@ defmodule HexpackExamplesTest do
     end
 
     test "use `with_frozen_time`" do
-      subject = with_frozen_time(~N[1964-08-31 06:00:00], fn -> current_time() end)
-      assert -168_372_000 == subject
+      with_frozen_time(~N[1964-08-31 06:00:00], fn -> 
+        assert -168_372_000 == current_time() 
+      end)
     end
   end
 
