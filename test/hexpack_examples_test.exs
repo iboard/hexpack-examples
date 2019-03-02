@@ -97,7 +97,7 @@ defmodule HexpackExamplesTest do
       GenStage.sync_subscribe(consumer, to: producer, max_demand: 1)
       Process.sleep(100)
 
-      assert GenStage.call(consumer, :get) |> Enum.count() > 9
+      assert GenStage.call(consumer, :get) |> Enum.count() >= 9
     end
   end
 end
