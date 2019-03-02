@@ -1,6 +1,6 @@
 # Hexpack Examples
 [![Documentation](https://img.shields.io/badge/docs-hexpm-blue.svg)](http://hexdocs.pm/hexpack_examples/)
-[![Documentation](https://travis-ci.com/iboard/hexpack_examples.svg?branch=master)](https://travis-ci.com/iboard/hexpack_examples)
+[![Documentation](https://travis-ci.com/iboard/hexpack-examples.svg?branch=master)](https://travis-ci.com/iboard/hexpack-examples)
 
 The aim of this repository is to show examples of how my HEX-packages
 can be used in a tested manner. This makes this examples for 
