@@ -7,6 +7,7 @@ can be used in a tested manner. This makes this examples for
 - [data_source][]
 - [bucketier][]
 - [timewrap][]
+- [exconfig][]
 
 the first place to look at when you want to use one of these packages
 in Elixir.
@@ -42,3 +43,4 @@ usage.
 [data_source]: https://hexdocs.pm/data_source
 [bucketier]: https://hexdocs.pm/bucketier
 [timewrap]: https://hexdocs.pm/timewrap
+[exconfig]: https://hexdocs.pm/exconfig
