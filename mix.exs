@@ -14,7 +14,7 @@ defmodule HexpackExamples.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger,:timewrap],
+      extra_applications: [:logger, :timewrap],
       mod: {HexpackExamples.Application, []}
     ]
   end
@@ -22,9 +22,10 @@ defmodule HexpackExamples.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:data_source, "~> 0.1" },
-      {:bucketier, "~> 0.1" },
-      {:timewrap, "~> 0.1" }
+      {:data_source, "~> 0.1"},
+      {:bucketier, "~> 0.1"},
+      {:timewrap, "~> 0.1"},
+      {:exconfig, "~> 0.1.0"}
     ]
   end
 end

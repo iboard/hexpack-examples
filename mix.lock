@@ -1,6 +1,7 @@
 %{
   "bucketier": {:hex, :bucketier, "0.1.2", "94e1ce90539caf19e334b5899a36390a86eaa07665313a65ce347409d64eeeb0", [:mix], [], "hexpm"},
   "data_source": {:hex, :data_source, "0.1.0", "da88d200f2e1e2a10b7c2c99cc20a8a4560f83afc1af06915c1e775f4d8c5f25", [:mix], [{:gen_stage, ">= 0.0.0", [hex: :gen_stage, repo: "hexpm", optional: false]}], "hexpm"},
+  "exconfig": {:hex, :exconfig, "0.1.0", "6763b687e1171cdc2f6d351b36a995f7733b0735532d680159267650080a4fed", [:mix], [], "hexpm"},
   "gen_stage": {:hex, :gen_stage, "0.14.1", "9d46723fda072d4f4bb31a102560013f7960f5d80ea44dcb96fd6304ed61e7a4", [:mix], [], "hexpm"},
   "timewrap": {:hex, :timewrap, "0.1.1", "48dddf3d830929f6a8ef27ea4ee7b0334a49866ce4feb149ef6550fac74cffd2", [:mix], [], "hexpm"},
 }

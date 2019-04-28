@@ -8,32 +8,31 @@ defmodule HexpackExamplesTest do
   # - [bucketier](https://hexdocs.pm/bucketier), 
   # - and [data_source](https://hexdocs.pm/data_source)
   #
-  
+
   describe "TIMEWRAP:" do
     use Timewrap
 
     test "use the default timer freeze and unfreeze it" do
       freeze_time(:default_timer, ~N[1964-08-31 06:00:00])
       :timer.sleep(1010)
-      assert ~N[1964-08-31 06:00:00] == current_time() 
+      assert ~N[1964-08-31 06:00:00] == current_time()
       unfreeze_time()
       assert current_time() > 1_000_000_000
     end
 
     test "use a new :test_timer, freeze, unfreeze, and release" do
-    
       # You don't need to use `new_timer(:default_timer)`, this is started with the app
       # For other timer instances you can use `new_timer(:atom)` as here
-      
+
       {:ok, t} = new_timer(:test_timer)
       freeze_time(:test_timer, ~N[1964-08-31 06:00:00])
-      
+
       :timer.sleep(1_010)
 
       assert current_time(:test_timer) == ~N[1964-08-31 06:00:00]
 
       unfreeze_time(:test_timer)
-      
+
       # Don't forget to release a timer started with `new_timer` before.
       release_timer(t)
     end
@@ -41,8 +40,8 @@ defmodule HexpackExamplesTest do
     test "use `with_frozen_time`" do
       assert current_time() > 1_000_000_000
 
-      with_frozen_time(~N[1964-08-31 06:00:00], fn -> 
-        assert -168_372_000 == current_time() 
+      with_frozen_time(~N[1964-08-31 06:00:00], fn ->
+        assert -168_372_000 == current_time()
       end)
 
       assert current_time() > 1_000_000_000
@@ -98,6 +97,19 @@ defmodule HexpackExamplesTest do
       Process.sleep(100)
 
       assert GenStage.call(consumer, :get) |> Enum.count() >= 9
+    end
+  end
+
+  describe "EXCONFIG" do
+    test "Read Application-config from cache" do
+      logger_level = Exconfig.get(:logger, :level)
+      assert logger_level == :debug
+    end
+
+    test "Read System-Environment from cache" do
+      System.put_env("ELIXIR_RULEZ", "Yes, it does!")
+      subject = Exconfig.get(:env, :elixir_rulez)
+      assert subject == "Yes, it does!"
     end
   end
 end
