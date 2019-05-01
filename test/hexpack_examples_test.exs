@@ -2,10 +2,12 @@ defmodule HexpackExamplesTest do
   use ExUnit.Case
   doctest HexpackExamples
 
+  # The following tests are examples of how to use my 
+  # [hex-packages](https://blog.altendorfer.at/andi/2019/elixir/hex/project/timewrap/bucketier/data_source/2019/02/24/HexPackages.html)
   #
-  # Read this tests as an example-usage of my hex-packages
   # - [timewrap](https://hexdocs.pm/timewrap), 
   # - [bucketier](https://hexdocs.pm/bucketier), 
+  # - [exconfig](https://hexdocs.pm/exconfig), 
   # - and [data_source](https://hexdocs.pm/data_source)
   #
 
